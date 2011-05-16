@@ -2,6 +2,7 @@
 " Vundle stuff:
 """""""""""""""""""""""""""""""""""""""
 set nocompatible
+filetype on
 filetype off
 
 set rtp+=~/.vim/vundle.git/
@@ -70,10 +71,16 @@ endtry
 """""""""""""""""""""""""""""""""""""""
 " C++/C programming
 """""""""""""""""""""""""""""""""""""""
-au Filetype c++ set cindent
-au Filetype c set cindent
-au Filetype ch set cindent
+au filetype c++ set cindent
+au filetype c set cindent
+au filetype ch set cindent
 
+"""""""""""""""""""""""""""""""""""""""
+" Quickfix stuff
+"""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <F4> :botright cwindow 5<CR>
+
+map <leader>cc :.cc
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -103,7 +110,6 @@ set mat=3
 
 "colormode stuff
 set background=dark
-colorscheme desert
 
 "highlight current line
 set cul             
@@ -122,6 +128,7 @@ set wildmenu
 set wildmode=list:longest
 
 if has("gui_running")
+	colorscheme desert
 	set anti
 	set window=51
 	set lines=60 columns=200
@@ -176,7 +183,6 @@ map <leader>tm :tabmove
 " => Taglist
 """"""""""""""""""""""""""""""
 set tags=tags;/     "look for tags
-map <F4> :TlistToggle<CR><CR>
 " Taglist variables
 " Display function name in status bar:
 let g:ctags_statusline=1
@@ -223,13 +229,13 @@ map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --
 
 " OmniCppComplete (only for work comp?)
 if hostname() !=? 'serentiy'
-	let OmniCpp_NamespaceSearch = 1
+	au filetype c++ let OmniCpp_NamespaceSearch = 1
 	let OmniCpp_GlobalScopeSearch = 1
 	let OmniCpp_ShowAccess = 1
-	let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-	let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-	let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-	let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+	au filetype c++ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+	au filetype c++ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+	au filetype c++ let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+	au filetype c++ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 	let OmniCpp_DefaultNamespaces = ["std"]
 	" automatically open and close the popup menu / preview window
 	au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -267,12 +273,12 @@ map <leader>s? z=
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
-autocmd Syntax html,vim inoremap < <lt>><Left>
+"autocmd Syntax html,vim inoremap < <lt>><Left>
 
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>
 inoremap } <c-r>=ClosePair('}')<CR>
-
+inoremap > <c-r>=ClosePair('>')<CR>
 inoremap " <c-r>=QuoteDelim('"')<CR>
 inoremap ' <c-r>=QuoteDelim("'")<CR>
 
@@ -329,7 +335,4 @@ func! DeleteEmptyPairs()
         return "\<BS>"
     endif
 endfunc
-
-
-
 

@@ -12,6 +12,8 @@ noremap! <M-Right> <C-Right>
 noremap! <D-Right> <End>
 noremap! <M-Left> <C-Left>
 noremap! <D-Left> <Home>
+imap <silent> <Plug>IMAP_JumpBack =IMAP_Jumpfunc('b', 0)
+imap <silent> <Plug>IMAP_JumpForward =IMAP_Jumpfunc('', 0)
 inoremap <expr> <BS> DeleteEmptyPairs()
 map! <D-v> *
 noremap  :bp
@@ -22,22 +24,36 @@ vnoremap " `>a"`<i"
 vnoremap ' `>a'`<i'
 vnoremap ( `>a)`<i(
 vnoremap ) `>a)`<i(
-nmap ,ig :IndentGuidesToggle
-nnoremap ,gp :GitPullRebase
-nnoremap ,gc :GitCommit
-nnoremap ,gA :GitAdd <cfile>
-nnoremap ,ga :GitAdd
-nnoremap ,gl :GitLog
-nnoremap ,gs :GitStatus
-nnoremap ,gD :GitDiff --cached
+map ,cc :.cc
 nnoremap ,gd :GitDiff
+nnoremap ,gD :GitDiff --cached
+nnoremap ,gs :GitStatus
+nnoremap ,gl :GitLog
+nnoremap ,ga :GitAdd
+nnoremap ,gA :GitAdd <cfile>
+nnoremap ,gc :GitCommit
+nnoremap ,gp :GitPullRebase
+nmap ,ig :IndentGuidesToggle
+map ,s? z=
+map ,sa zg
+map ,sp [s
+map ,sn ]s
+map ,sc :setlocal spell!
+map ,tm :tabmove 
+map ,tc :tabclose
+map ,te :tabedit 
+map ,tn :tabnew %
+map ,ev :e! ~/.vimrc
 vnoremap [ `>a]`<i[
 map \ev :e! ~/.vimrc
 vnoremap ] `>a]`<i[
 vnoremap ` `>a``<i`
+map cp :cp
+map cn :cn
 nmap gx <Plug>NetrwBrowseX
 vnoremap { `>a}`<i{
 vnoremap } `>a}`<i{
+nnoremap <silent> <F4> :botright cwindow 5
 map <M-Down> }
 noremap <D-Down> <C-End>
 map <M-Up> {
@@ -47,14 +63,26 @@ noremap <D-Right> <End>
 noremap <M-Left> <C-Left>
 noremap <D-Left> <Home>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+vmap <silent> <Plug>IMAP_JumpBack `<i=IMAP_Jumpfunc('b', 0)
+vmap <silent> <Plug>IMAP_JumpForward i=IMAP_Jumpfunc('', 0)
+vmap <silent> <Plug>IMAP_DeleteAndJumpBack "_<Del>i=IMAP_Jumpfunc('b', 0)
+vmap <silent> <Plug>IMAP_DeleteAndJumpForward "_<Del>i=IMAP_Jumpfunc('', 0)
+nmap <silent> <Plug>IMAP_JumpBack i=IMAP_Jumpfunc('b', 0)
+nmap <silent> <Plug>IMAP_JumpForward i=IMAP_Jumpfunc('', 0)
 map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .
 nnoremap <silent> <F3> :NERDTreeToggle
 nnoremap <silent> <F2> :TlistToggle
+map <Left> :tabprevious
+map <Right> :tabnext
 vmap <BS> "-d
 vmap <D-x> "*d
 vmap <D-c> "*y
 vmap <D-v> "-d"*P
 nmap <D-v> "*P
+cnoremap  <Home>
+cnoremap  <End>
+imap <NL> <Plug>IMAP_JumpForward
+cnoremap  
 inoremap <expr>  omni#cpp#maycomplete#Complete()
 inoremap " =QuoteDelim('"')
 inoremap ' =QuoteDelim("'")
@@ -62,7 +90,7 @@ inoremap ( ()<Left>
 inoremap ) =ClosePair(')')
 inoremap <expr> . omni#cpp#maycomplete#Dot()
 inoremap <expr> : omni#cpp#maycomplete#Scope()
-inoremap <expr> > omni#cpp#maycomplete#Arrow()
+inoremap > =ClosePair('>')
 inoremap [ []<Left>
 inoremap ] =ClosePair(']')
 inoremap { {}<Left>
@@ -70,28 +98,37 @@ inoremap } =ClosePair('}')
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
+set autoread
 set background=dark
-set backspace=indent,eol,start
-set completeopt=menuone,longest,preview
+set backspace=indent
+set completeopt=menuone,menu,longest,preview
 set fileencodings=ucs-bom,utf-8,default,latin1
+set fuoptions=maxhorz,maxvert
 set grepprg=grep\ -nH\ $*
 set guitablabel=%M%t
 set helplang=en
+set hlsearch
+set ignorecase
+set incsearch
 set iskeyword=@,48-57,_,192-255,:
 set langmenu=none
+set matchtime=3
 set mouse=a
 set omnifunc=omni#cpp#complete#Main
 set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 set ruler
-set runtimepath=~/.vim/bundle/OmniCppComplete,~/.vim/bundle/nerdtree,~/.vim/bundle/taglist.vim,~/.vim/bundle/vim-outliner,~/.vim/bundle/git-vim,~/.vim/bundle/LaTeX-Suite.vim,~/.vim/bundle/vim-indent-guides,~/.vim/bundle/sessionman.vim,~/.vim/bundle/cpp.vim,~/.vim,/Applications/MacVim.app/Contents/Resources/vim/vimfiles,/Applications/MacVim.app/Contents/Resources/vim/runtime,/Applications/MacVim.app/Contents/Resources/vim/vimfiles/after,~/.vim/after,~/.vim/vundle.git/,~/.vim/bundle/cpp.vim/after,~/.vim/bundle/sessionman.vim/after,~/.vim/bundle/vim-indent-guides/after,~/.vim/bundle/LaTeX-Suite.vim/after,~/.vim/bundle/git-vim/after,~/.vim/bundle/vim-outliner/after,~/.vim/bundle/taglist.vim/after,~/.vim/bundle/nerdtree/after,~/.vim/bundle/OmniCppComplete/after
+set runtimepath=~/.vim/bundle/clang_complete,~/.vim/bundle/nerdtree,~/.vim/bundle/taglist.vim,~/.vim/bundle/vim-outliner,~/.vim/bundle/fugitive.vim,~/.vim/bundle/LaTeX-Suite-aka-Vim-LaTeX,~/.vim/bundle/vim-indent-guides,~/.vim/bundle/sessionman.vim,~/.vim/bundle/cpp.vim,~/.vim/bundle/OmniCppComplete,~/.vim/bundle/git-vim,~/.vim/bundle/LaTeX-Suite.vim,~/.vim,/Applications/MacVim.app/Contents/Resources/vim/vimfiles,/Applications/MacVim.app/Contents/Resources/vim/runtime,/Applications/MacVim.app/Contents/Resources/vim/vimfiles/after,~/.vim/after,~/.vim/vundle.git/,~/.vim/bundle/LaTeX-Suite.vim/after,~/.vim/bundle/git-vim/after,~/.vim/bundle/OmniCppComplete/after,~/.vim/bundle/cpp.vim/after,~/.vim/bundle/sessionman.vim/after,~/.vim/bundle/vim-indent-guides/after,~/.vim/bundle/LaTeX-Suite-aka-Vim-LaTeX/after,~/.vim/bundle/fugitive.vim/after,~/.vim/bundle/vim-outliner/after,~/.vim/bundle/taglist.vim/after,~/.vim/bundle/nerdtree/after,~/.vim/bundle/clang_complete/after
 set shiftwidth=4
+set showmatch
+set smartcase
 set tabstop=4
-set tags=./tags,tags,~/.vim/tags/cpp
+set tags=tags;/,~/.vim/tags/cpp
 set termencoding=utf-8
 set title
-set undolevels=10000
 set visualbell
-set window=60
+set wildmenu
+set wildmode=list:longest
+set window=51
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -100,32 +137,45 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +50 rbasis.cpp
+badd +48 rbasis.cpp
 badd +24 lib/rbasis.h
-badd +26 main.cpp
+badd +21 main.cpp
+badd +263 ~/.vimrc
 silent! argdel *
+edit ~/.vimrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-enew
+vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "bW")
+nnoremap <buffer> <silent> [] m':call search('^\s*endf*\%[unction]\>', "bW")
+vnoremap <buffer> <silent> [[ m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "bW")
+nnoremap <buffer> <silent> [[ m':call search('^\s*fu\%[nction]\>', "bW")
+vnoremap <buffer> <silent> ]" :exe "normal! gv"|call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+nnoremap <buffer> <silent> ]" :call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "W")
+nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
+vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
+nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
 setlocal balloonexpr=
 setlocal nobinary
-setlocal bufhidden=wipe
+setlocal bufhidden=
 setlocal buflisted
-setlocal buftype=quickfix
+setlocal buftype=
 setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
+setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
+setlocal commentstring=\"%s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -134,15 +184,16 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal nocursorline
+set cursorline
+setlocal cursorline
 setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'qf'
-setlocal filetype=qf
+if &filetype != 'vim'
+setlocal filetype=vim
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -162,19 +213,20 @@ setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal indentexpr=GetVimIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,:
 setlocal keywordprg=
-setlocal nolinebreak
+set linebreak
+setlocal linebreak
 setlocal nolisp
 setlocal nolist
 setlocal nomacmeta
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
-setlocal nomodifiable
+setlocal modifiable
 setlocal nrformats=octal,hex
 setlocal nonumber
 setlocal numberwidth=4
@@ -196,22 +248,29 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%q%{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}
+setlocal statusline=
 setlocal suffixesadd=
-setlocal noswapfile
+setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'qf'
-setlocal syntax=qf
+if &syntax != 'vim'
+setlocal syntax=vim
 endif
 setlocal tabstop=4
 setlocal tags=
-setlocal textwidth=0
+setlocal textwidth=78
 setlocal thesaurus=
 setlocal noundofile
-setlocal winfixheight
+setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 336 - ((49 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+336
+normal! 08l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
