@@ -1,0 +1,97 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Hamiltonian	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^class Hamiltonian$/;"	c
+Hamiltonian::boundstates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > boundstates;	\/\/array of vectors containing points in the bound states$/;"	m	class:Hamiltonian	access:private
+Hamiltonian::dr	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	real dr;	\/\/ default lattice spacing$/;"	m	class:Hamiltonian	access:private
+Hamiltonian::energies	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<real>   energies;	\/\/array of real values containing the energies.  Must be real valued.$/;"	m	class:Hamiltonian	access:private
+Hamiltonian::findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^void Hamiltonian::findBasis();$/;"	p	class:Hamiltonian	file:	signature:()
+Hamiltonian::findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	void findBasis();$/;"	p	class:Hamiltonian	access:public	signature:()
+Hamiltonian::freestates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > freestates;	\/\/array of vectors containing points in the free states$/;"	m	class:Hamiltonian	access:private
+Hamiltonian::getBoundStates	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^vector<complex<real>>[] Hamiltonian::getBoundStates()$/;"	f	class:Hamiltonian	signature:()
+Hamiltonian::getBoundStates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > getBoundStates();$/;"	p	class:Hamiltonian	access:public	signature:()
+Hamiltonian::getFreeStates	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^vector<complex<real>>[] Hamiltonian::getFreeStates()$/;"	f	class:Hamiltonian	signature:()
+Hamiltonian::getFreeStates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > getFreeStates();$/;"	p	class:Hamiltonian	access:public	signature:()
+Hamiltonian::init	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^Hamiltonian Hamiltonian::init(real rm, real drr)$/;"	f	class:Hamiltonian	signature:(real rm, real drr)
+Hamiltonian::init	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	Hamiltonian::Hamiltonian init(real, real);$/;"	p	class:Hamiltonian	access:public	signature:(real, real)
+Hamiltonian::nmax	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	int nmax;	\/\/infinite square well boundary in steps$/;"	m	class:Hamiltonian	access:private
+Hamiltonian::solve	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^boolean Hamiltonian::solve(real energy, int l, vector<complex<real>> &state)$/;"	f	class:Hamiltonian	signature:(real energy, int l, vector<complex<real>> &state)
+Hamiltonian::solve	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	bool solve(real, int, std::vector<std::complex<real> >&);$/;"	p	class:Hamiltonian	access:private	signature:(real, int, std::vector<std::complex<real> >&)
+RBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	RBasis(real (*f)(real fr, int fel, real fen), int nn, int eguess, real rrmax, real en, int numSteps ) : rmax(rrmax), e(en), l(el), n(nn), nsteps(numSteps)$/;"	f	class:RBasis	access:private	signature:(real (f)real fr, int fel, real fen), int nn, int eguess, real rrmax, real en, int numSteps )
+RBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	RBasis(vec, int, double, int);$/;"	p	class:RBasis	access:private	signature:(vec, int, double, int)
+RBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^class RBasis$/;"	c
+RBasis::RBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	RBasis(real (*f)(real fr, int fel, real fen), int nn, int eguess, real rrmax, real en, int numSteps ) : rmax(rrmax), e(en), l(el), n(nn), nsteps(numSteps)$/;"	f	class:RBasis	access:private	signature:(real (f)real fr, int fel, real fen), int nn, int eguess, real rrmax, real en, int numSteps )
+RBasis::RBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	RBasis(vec, int, double, int);$/;"	p	class:RBasis	access:private	signature:(vec, int, double, int)
+RBasis::dr	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real dr;$/;"	m	class:RBasis	access:private
+RBasis::e	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real e;$/;"	m	class:RBasis	access:private
+RBasis::findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	void findBasis(int nn, int el);$/;"	p	class:RBasis	access:private	signature:(int nn, int el)
+RBasis::findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^RBasis::findBasis(real eguess)$/;"	f	class:RBasis	signature:(real eguess)
+RBasis::g	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real (*g)(real, int, real);$/;"	m	class:RBasis	access:private
+RBasis::l	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int l;$/;"	m	class:RBasis	access:private
+RBasis::n	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	unsigned int n;$/;"	m	class:RBasis	access:private
+RBasis::nextNumerov	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^real RBasis::nextNumerov(int m)$/;"	f	class:RBasis	signature:(int m)
+RBasis::nsteps	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int nsteps;$/;"	m	class:RBasis	access:private
+RBasis::psi	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec psi();$/;"	p	class:RBasis	access:private	signature:()
+RBasis::psi	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec psi(real);$/;"	p	class:RBasis	access:private	signature:(real)
+RBasis::psi	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^vec RBasis::psi();$/;"	p	class:RBasis	file:	signature:()
+RBasis::psi	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^vec RBasis::psi(real);$/;"	p	class:RBasis	file:	signature:(real)
+RBasis::psir	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real psir(real);$/;"	p	class:RBasis	access:private	signature:(real)
+RBasis::psir	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^real RBasis::psir(real);$/;"	p	class:RBasis	file:	signature:(real)
+RBasis::rmax	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int rmax;$/;"	m	class:RBasis	access:private
+RBasis::w	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec w;$/;"	m	class:RBasis	access:private
+boundstates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > boundstates;	\/\/array of vectors containing points in the bound states$/;"	m	class:Hamiltonian	access:private
+dr	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	real dr;	\/\/ default lattice spacing$/;"	m	class:Hamiltonian	access:private
+dr	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real dr;$/;"	m	class:RBasis	access:private
+dr	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	real dr;		\/\/step size$/;"	v
+e	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real e;$/;"	m	class:RBasis	access:private
+e	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	real e;			\/\/energy$/;"	v
+energies	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<real>   energies;	\/\/array of real values containing the energies.  Must be real valued.$/;"	m	class:Hamiltonian	access:private
+f	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^real f(real r, int l, real n)$/;"	f	signature:(real r, int l, real n)
+findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^void Hamiltonian::findBasis();$/;"	p	class:Hamiltonian	file:	signature:()
+findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	void findBasis();$/;"	p	class:Hamiltonian	access:public	signature:()
+findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	void findBasis(int nn, int el);$/;"	p	class:RBasis	access:private	signature:(int nn, int el)
+findBasis	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^RBasis::findBasis(real eguess)$/;"	f	class:RBasis	signature:(real eguess)
+freestates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > freestates;	\/\/array of vectors containing points in the free states$/;"	m	class:Hamiltonian	access:private
+g	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real (*g)(real, int, real);$/;"	m	class:RBasis	access:private
+getBoundStates	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^vector<complex<real>>[] Hamiltonian::getBoundStates()$/;"	f	class:Hamiltonian	signature:()
+getBoundStates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > getBoundStates();$/;"	p	class:Hamiltonian	access:public	signature:()
+getFreeStates	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^vector<complex<real>>[] Hamiltonian::getFreeStates()$/;"	f	class:Hamiltonian	signature:()
+getFreeStates	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	std::vector<std::complex<real> > getFreeStates();$/;"	p	class:Hamiltonian	access:public	signature:()
+h	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	real (*h)(real,int,real);$/;"	m	class:test	file:	access:private
+init	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^Hamiltonian Hamiltonian::init(real rm, real drr)$/;"	f	class:Hamiltonian	signature:(real rm, real drr)
+init	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	Hamiltonian::Hamiltonian init(real, real);$/;"	p	class:Hamiltonian	access:public	signature:(real, real)
+l	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int l;$/;"	m	class:RBasis	access:private
+l	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	int l;			\/\/angular quantum number$/;"	v
+main	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^int main()$/;"	f	signature:()
+n	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	unsigned int n;$/;"	m	class:RBasis	access:private
+n	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	int n;$/;"	m	class:test	file:	access:private
+n	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	unsigned int n;	\/\/principle quantum number$/;"	v
+nextNumerov	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^real RBasis::nextNumerov(int m)$/;"	f	class:RBasis	signature:(int m)
+nmax	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	int nmax;	\/\/infinite square well boundary in steps$/;"	m	class:Hamiltonian	access:private
+nsteps	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int nsteps;$/;"	m	class:RBasis	access:private
+otherTest	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	void otherTest()$/;"	f	class:test	access:public	signature:()
+ps	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	vec ps;			\/\/wavefunction$/;"	v
+psi	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec psi();$/;"	p	class:RBasis	access:private	signature:()
+psi	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec psi(real);$/;"	p	class:RBasis	access:private	signature:(real)
+psi	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^vec RBasis::psi();$/;"	p	class:RBasis	file:	signature:()
+psi	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^vec RBasis::psi(real);$/;"	p	class:RBasis	file:	signature:(real)
+psir	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	real psir(real);$/;"	p	class:RBasis	access:private	signature:(real)
+psir	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^real RBasis::psir(real);$/;"	p	class:RBasis	file:	signature:(real)
+real	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^typedef long double real;$/;"	t
+real	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^typedef long double real;$/;"	t
+real	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^typedef long double real;$/;"	t	file:
+rmax	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	int rmax;$/;"	m	class:RBasis	access:private
+rmax	/Users/spott/Documents/Work/Becker/code/ebasis/rbasis.cpp	/^	real rmax;		\/\/square well size$/;"	v
+solve	/Users/spott/Documents/Work/Becker/code/ebasis/hamiltonian.cpp	/^boolean Hamiltonian::solve(real energy, int l, vector<complex<real>> &state)$/;"	f	class:Hamiltonian	signature:(real energy, int l, vector<complex<real>> &state)
+solve	/Users/spott/Documents/Work/Becker/code/ebasis/lib/hamiltonian.h	/^	bool solve(real, int, std::vector<std::complex<real> >&);$/;"	p	class:Hamiltonian	access:private	signature:(real, int, std::vector<std::complex<real> >&)
+test	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	test(real (*g)(real, int, real), int nnn) : n(nnn)$/;"	f	class:test	access:public	signature:(real (g)real, int, real), int nnn)
+test	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^class test$/;"	c	file:
+test::h	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	real (*h)(real,int,real);$/;"	m	class:test	file:	access:private
+test::n	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	int n;$/;"	m	class:test	file:	access:private
+test::otherTest	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	void otherTest()$/;"	f	class:test	access:public	signature:()
+test::test	/Users/spott/Documents/Work/Becker/code/ebasis/main.cpp	/^	test(real (*g)(real, int, real), int nnn) : n(nnn)$/;"	f	class:test	access:public	signature:(real (g)real, int, real), int nnn)
+vec	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^typedef vector<real> vec;$/;"	t
+w	/Users/spott/Documents/Work/Becker/code/ebasis/lib/rbasis.h	/^	vec w;$/;"	m	class:RBasis	access:private
