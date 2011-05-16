@@ -199,7 +199,11 @@ let Tlist_File_Fold_Auto_Close = 1
 
 " TODO: Change this when transfering
 " change this to ctags directory
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+if hostname() ==? "serenity"
+	let Tlist_Ctags_Cmd = "/usr/local/bin/ctags" 
+else
+	let Tlist_Ctags_Cmd = "/usr/bin/ctags" 
+endif
 
 "Toggle the sidebars
 nnoremap <silent> <F2> :TlistToggle<CR>
