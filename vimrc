@@ -80,7 +80,7 @@ au filetype ch set cindent
 """""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <F4> :botright cwindow 5<CR>
 
-map <leader>cc :.cc
+map <leader>cc :.cc<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -94,6 +94,9 @@ set smartcase
 
 " highlight the search values
 set hlsearch
+
+" set a leader shortcut to turn off highlighting:
+map <leader>hl :nohlsearch<CR>
 
 " Make search act like search in modern browsers
 set incsearch 
@@ -229,7 +232,12 @@ set tags+=~/.vim/tags/cpp
 "set tags+=~/.vim/tags/ebasis
 
 " build tags of your own project with Ctrl-F12
-map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+if hostname() ==? "serenity"
+	map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+else
+	map <C-F12> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+endif
 
 " OmniCppComplete (only for work comp?)
 if hostname() !=? 'serentiy'
