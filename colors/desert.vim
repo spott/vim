@@ -65,7 +65,7 @@ hi Type		guifg=darkkhaki
 hi Special	guifg=navajowhite
 "hi Underlined
 hi Ignore	guifg=grey40
-hi Todo		guifg=orangered guibg=yellow2 gui=bold
+hi Todo		guifg=orangered gui=bold
 
 "my edits
 "hi String	guifg=grey50 gui=italic

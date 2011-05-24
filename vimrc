@@ -67,6 +67,9 @@ try
     lang en_US
 catch
 endtry
+"""""""""""""""""""""""""""""""""""""""
+" Killring in vim...
+"""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""
 " C++/C programming
@@ -75,12 +78,40 @@ au filetype c++ set cindent
 au filetype c set cindent
 au filetype ch set cindent
 
+"comment using <leader>cc
+""vnoremap <leader>cc  <ESC>`>a*/<ESC>`<i/*<ESC>
+vnoremap <leader>cc  <Esc>`<:let fl=line(".")<CR>`>:let ll=line(".")<CR>:call Comment(fl, ll)<CR>
+nnoremap <leader>cc  I//<ESC>
+
+
+function! Comment(fl,ll)
+	let i=a:fl
+	let a:start=0
+	let a:commented=0
+	while i<=a:ll
+		if (getline(i) =~ '/\{-}\/\*.*' && a:start==0)
+			exec(i.'s/\/\*//')
+			let a:start=1
+			let a:commented=1
+		endif
+		if (getline(i) =~ '/\{-}\*\/')
+			exec(i.'s/\*\///g')
+			let a:commented=1
+		endif
+		let i+=1
+	endwhile
+	if !a:commented
+		exec(a:fl.'s/^/\/\*/')
+		exec(a:ll.'s/$/\*\//')
+	endif
+endfunction
+
 """""""""""""""""""""""""""""""""""""""
 " Quickfix stuff
 """""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <F4> :botright cwindow 5<CR>
 
-map <leader>cc :.cc<CR>
+"map <leader>cc :.cc<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -131,11 +162,13 @@ set wildmenu
 set wildmode=list:longest
 
 if has("gui_running")
-	colorscheme desert
+	set guioptions-=T "set no toolbar"
+	colorscheme desert-edit
 	set anti
 	set window=51
-	set lines=60 columns=200
+	set lines=56 columns=205
 	if hostname() ==? "serenity"
+		set lines=60 columns=200
 		set fu
 		set fuoptions=maxhorz,maxvert
 	endif
@@ -185,7 +218,27 @@ map <leader>tm :tabmove
 """"""""""""""""""""""""""""""
 " => Taglist
 """"""""""""""""""""""""""""""
-set tags=tags;/     "look for tags
+"look for tags
+set tags=tags;/     
+
+" configure tags - add additional tags here or comment out not-used ones
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/petsc
+set tags+=~/.vim/tags/gsl
+set tags+=~/.vim/tags/armadillo
+set tags+=~/.vim/tags/blitz++
+set tags+=~/.vim/tags/fftw
+
+"set tags+=~/.vim/tags/ebasis
+
+" build tags of your own project with Ctrl-F12
+
+if hostname() ==? "serenity"
+	map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+else
+	map <C-F12> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+endif
+
 " Taglist variables
 " Display function name in status bar:
 let g:ctags_statusline=1
@@ -198,7 +251,8 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
+let Tlist_File_Fold_Auto_Close = 0
+let Tlist_Display_Prototype = 1
 
 " TODO: Change this when transfering
 " change this to ctags directory
@@ -227,17 +281,7 @@ set iskeyword+=:
 " => Omnicppcomplete
 """"""""""""""""""""""""""""""
 
-" configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp
-"set tags+=~/.vim/tags/ebasis
 
-" build tags of your own project with Ctrl-F12
-
-if hostname() ==? "serenity"
-	map <C-F12> :!/usr/local/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-else
-	map <C-F12> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-endif
 
 " OmniCppComplete (only for work comp?)
 if hostname() !=? 'serentiy'
