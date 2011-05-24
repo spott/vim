@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+FFTW3_H	/usr/local/fftw/include/fftw3.h	48;"	d
+FFTW_ALLOW_LARGE_GENERIC	/usr/local/fftw/include/fftw3.h	367;"	d
+FFTW_ALLOW_PRUNING	/usr/local/fftw/include/fftw3.h	374;"	d
+FFTW_BACKWARD	/usr/local/fftw/include/fftw3.h	346;"	d
+FFTW_BELIEVE_PCOST	/usr/local/fftw/include/fftw3.h	362;"	d
+FFTW_CONCAT	/usr/local/fftw/include/fftw3.h	65;"	d
+FFTW_CONSERVE_MEMORY	/usr/local/fftw/include/fftw3.h	354;"	d
+FFTW_DEFINE_API	/usr/local/fftw/include/fftw3.h	116;"	d
+FFTW_DEFINE_COMPLEX	/usr/local/fftw/include/fftw3.h	60;"	d
+FFTW_DEFINE_COMPLEX	/usr/local/fftw/include/fftw3.h	62;"	d
+FFTW_DESTROY_INPUT	/usr/local/fftw/include/fftw3.h	352;"	d
+FFTW_DHT	/usr/local/fftw/include/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_ESTIMATE	/usr/local/fftw/include/fftw3.h	358;"	d
+FFTW_ESTIMATE_PATIENT	/usr/local/fftw/include/fftw3.h	361;"	d
+FFTW_EXHAUSTIVE	/usr/local/fftw/include/fftw3.h	355;"	d
+FFTW_EXTERN	/usr/local/fftw/include/fftw3.h	80;"	d
+FFTW_EXTERN	/usr/local/fftw/include/fftw3.h	82;"	d
+FFTW_EXTERN	/usr/local/fftw/include/fftw3.h	85;"	d
+FFTW_FORWARD	/usr/local/fftw/include/fftw3.h	345;"	d
+FFTW_HC2R	/usr/local/fftw/include/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_MANGLE_DOUBLE	/usr/local/fftw/include/fftw3.h	66;"	d
+FFTW_MANGLE_FLOAT	/usr/local/fftw/include/fftw3.h	67;"	d
+FFTW_MANGLE_LONG_DOUBLE	/usr/local/fftw/include/fftw3.h	68;"	d
+FFTW_MEASURE	/usr/local/fftw/include/fftw3.h	351;"	d
+FFTW_NO_BUFFERING	/usr/local/fftw/include/fftw3.h	365;"	d
+FFTW_NO_DFT_R2HC	/usr/local/fftw/include/fftw3.h	363;"	d
+FFTW_NO_FIXED_RADIX_LARGE_N	/usr/local/fftw/include/fftw3.h	373;"	d
+FFTW_NO_INDIRECT_OP	/usr/local/fftw/include/fftw3.h	366;"	d
+FFTW_NO_NONTHREADED	/usr/local/fftw/include/fftw3.h	364;"	d
+FFTW_NO_RANK_SPLITS	/usr/local/fftw/include/fftw3.h	368;"	d
+FFTW_NO_SIMD	/usr/local/fftw/include/fftw3.h	371;"	d
+FFTW_NO_SLOW	/usr/local/fftw/include/fftw3.h	372;"	d
+FFTW_NO_TIMELIMIT	/usr/local/fftw/include/fftw3.h	348;"	d
+FFTW_NO_VRANK_SPLITS	/usr/local/fftw/include/fftw3.h	369;"	d
+FFTW_NO_VRECURSE	/usr/local/fftw/include/fftw3.h	370;"	d
+FFTW_PATIENT	/usr/local/fftw/include/fftw3.h	357;"	d
+FFTW_PRESERVE_INPUT	/usr/local/fftw/include/fftw3.h	356;"	d
+FFTW_R2HC	/usr/local/fftw/include/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT00	/usr/local/fftw/include/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT01	/usr/local/fftw/include/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT10	/usr/local/fftw/include/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT11	/usr/local/fftw/include/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT00	/usr/local/fftw/include/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT01	/usr/local/fftw/include/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT10	/usr/local/fftw/include/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT11	/usr/local/fftw/include/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_UNALIGNED	/usr/local/fftw/include/fftw3.h	353;"	d
+FFTW_WISDOM_ONLY	/usr/local/fftw/include/fftw3.h	375;"	d
+fftw_iodim64_do_not_use_me	/usr/local/fftw/include/fftw3.h	/^struct fftw_iodim64_do_not_use_me {$/;"	s
+fftw_iodim64_do_not_use_me::is	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t is;			\/* input stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
+fftw_iodim64_do_not_use_me::n	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
+fftw_iodim64_do_not_use_me::os	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t os;			\/* output stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
+fftw_iodim_do_not_use_me	/usr/local/fftw/include/fftw3.h	/^struct fftw_iodim_do_not_use_me {$/;"	s
+fftw_iodim_do_not_use_me::is	/usr/local/fftw/include/fftw3.h	/^     int is;			\/* input stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+fftw_iodim_do_not_use_me::n	/usr/local/fftw/include/fftw3.h	/^     int n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+fftw_iodim_do_not_use_me::os	/usr/local/fftw/include/fftw3.h	/^     int os;			\/* output stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+fftw_r2r_kind_do_not_use_me	/usr/local/fftw/include/fftw3.h	/^enum fftw_r2r_kind_do_not_use_me {$/;"	g
+is	/usr/local/fftw/include/fftw3.h	/^     int is;			\/* input stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+is	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t is;			\/* input stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
+n	/usr/local/fftw/include/fftw3.h	/^     int n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+n	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
+os	/usr/local/fftw/include/fftw3.h	/^     int os;			\/* output stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me	access:public
+os	/usr/local/fftw/include/fftw3.h	/^     ptrdiff_t os;			\/* output stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me	access:public
