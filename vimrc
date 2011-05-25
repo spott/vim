@@ -23,6 +23,8 @@ Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'sessionman.vim' 
 Bundle 'cpp.vim'
+Bundle 'YankRing.vim'
+"Bundle 'TinyBufferExplorer' "Bumber that this doesn't work and is buggy as hell
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -51,6 +53,9 @@ set ul=1000
 " Autoread modified files:
 set autoread
 
+" make switching buffers to use tabs and open windows
+set switchbuf=usetab
+
 "Map the leader to ','
 let mapleader = ","
 let g:mapleader = ","
@@ -68,8 +73,10 @@ try
 catch
 endtry
 """""""""""""""""""""""""""""""""""""""
-" Killring in vim...
+" Yankring plugin
 """""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <F5> :YRShow<CR>
+
 
 """""""""""""""""""""""""""""""""""""""
 " C++/C programming
@@ -189,8 +196,8 @@ map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
 
 " keymaps for switching buffers
-noremap <C-h> :bp<CR>
-noremap <C-l> :bn<CR>
+noremap <C-h> :sbp<CR>
+noremap <C-l> :sbn<CR>
 
 " allow backspacing over an indent, if you want to backspace over the start of
 " indent, add 'start' to this list
