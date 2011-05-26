@@ -24,8 +24,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'sessionman.vim' 
 Bundle 'cpp.vim'
 Bundle 'YankRing.vim'
+Bundle 'minibufexpl.vim'
 "Bundle 'TinyBufferExplorer' "Bumber that this doesn't work and is buggy as hell
-
 
 """""""""""""""""""""""""""""""""""""""
 " General stuff:
