@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
 " Vundle stuff:
 """""""""""""""""""""""""""""""""""""""
 set nocompatible
@@ -77,6 +77,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <F5> :YRShow<CR>
 
+let g:yankring_history_file = '.vim/yankring_hist'
 
 """""""""""""""""""""""""""""""""""""""
 " C++/C programming
