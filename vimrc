@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""
+:""""""""""""""""""""""""""""""""""""
 " Vundle stuff:
 """""""""""""""""""""""""""""""""""""""
 set nocompatible
@@ -9,13 +9,13 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 " Bundles!
-if hostname() ==? 'serenity'
+if hostname() ==? 'Serenity.local'
 	Bundle 'Rip-Rip/clang_complete'
 else
 	Bundle 'OmniCppComplete'
 endif
 Bundle 'scrooloose/nerdtree'
-Bundle 'taglist.vim'
+"Bundle 'taglist.vim'
 Bundle 'sophacles/vim-outliner'
 "Bundle 'motemen/git-vim'
 Bundle 'fugitive.vim'
@@ -25,7 +25,14 @@ Bundle 'sessionman.vim'
 Bundle 'cpp.vim'
 Bundle 'YankRing.vim'
 Bundle 'minibufexpl.vim'
-"Bundle 'TinyBufferExplorer' "Bumber that this doesn't work and is buggy as hell
+Bundle 'sjl/threesome.vim.git'
+"Need to learn how to use the next few
+Bundle 'mru'
+"Bundle 'Raimondi/delimitMate'
+Bundle 'Shougo/neocomplcache'
+Bundle 'majutsushi/tagbar'
+Bundle 'kana/vim-arpeggio'
+"Bundel 'scrooloose/nerdcommenter'
 
 """""""""""""""""""""""""""""""""""""""
 " General stuff:
