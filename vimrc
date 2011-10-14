@@ -14,6 +14,7 @@ if hostname() ==? 'Serenity.local'
 else
 	Bundle 'OmniCppComplete'
 endif
+Bundle 'fortran.vim'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'taglist.vim'
 Bundle 'sophacles/vim-outliner'
@@ -32,11 +33,24 @@ Bundle 'mru'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'kana/vim-arpeggio'
-"Bundel 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 
 """""""""""""""""""""""""""""""""""""""
 " General stuff:
 """""""""""""""""""""""""""""""""""""""
+" Fortran fixed/free stuff
+au BufRead,BufNewFile *.f90 let b:fortran_fixed_source=0
+au BufRead,BufNewFile *.f let b:fortran_fixed_source=0
+let s:extfname = expand("%:e")
+if s:extfname ==? "f90"
+	let fortran_free_source=1
+	unlet! fortran_fixed_source
+    let fortran_fold=1
+    let fortran_more_precise=1
+else
+	let fortran_fixed_source=1
+	unlet! fortran_free_source
+endif
 
 " Enable filetype plugins
 filetype plugin on
@@ -95,8 +109,8 @@ au filetype ch set cindent
 
 "comment using <leader>cc
 ""vnoremap <leader>cc  <ESC>`>a*/<ESC>`<i/*<ESC>
-vnoremap <leader>cc  <Esc>`<:let fl=line(".")<CR>`>:let ll=line(".")<CR>:call Comment(fl, ll)<CR>
-nnoremap <leader>cc  I//<ESC>
+"vnoremap <leader>cc  <Esc>`<:let fl=line(".")<CR>`>:let ll=line(".")<CR>:call Comment(fl, ll)<CR>
+"nnoremap <leader>cc  I//<ESC>
 
 
 function! Comment(fl,ll)
@@ -178,11 +192,11 @@ set wildmode=list:longest
 
 if has("gui_running")
 	set guioptions-=T "set no toolbar"
-	colorscheme desert-edit
+	colorscheme desert
 	set anti
 	set window=51
-	set lines=56 columns=205
-	if hostname() ==? "serenity"
+	"set lines=56 columns=205
+	if hostname() ==? "Serenity"
 		set lines=60 columns=200
 		set fu
 		set fuoptions=maxhorz,maxvert
